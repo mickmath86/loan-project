@@ -1,9 +1,9 @@
-import { cn } from '../lib/utils'
+import { cn } from '@/lib/utils'
 
-export const Logo = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
+export const Logo = ({ className, uniColor = true }: { className?: string; uniColor?: boolean }) => {
     return (
         <svg
-            className={cn('text-foreground h-6 w-full', className)}
+            className={cn('text-foreground h-5 w-full', className)}
             viewBox="0 0 797 220"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@ export const Logo = ({ className, uniColor }: { className?: string; uniColor?: b
 export const LogoIcon = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
     return (
         <svg
-            className={cn('size-6', className)}
+            className={cn('size-5', className)}
             viewBox="0 0 180 220"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">

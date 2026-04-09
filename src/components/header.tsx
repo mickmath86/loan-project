@@ -8,9 +8,8 @@ import { cn } from '@/lib/utils'
 
 const menuItems = [
     { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
     { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
+    { name: 'Company', href: '#link' },
 ]
 
 export const HeroHeader = () => {
@@ -28,10 +27,10 @@ export const HeroHeader = () => {
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="fixed z-20 w-full px-2">
-                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
+                className={cn('fixed z-20 w-full transition-all duration-300', isScrolled && 'bg-background/75 border-b border-black/5 backdrop-blur-lg')}>
+                <div className="mx-auto max-w-5xl px-6">
+                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-6 lg:gap-0">
+                        <div className="flex w-full justify-between gap-6 lg:w-auto">
                             <Link
                                 href="/"
                                 aria-label="home"
@@ -49,14 +48,10 @@ export const HeroHeader = () => {
                         </div>
 
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
+                            <ul className="flex gap-1">
                                 {menuItems.map((item, index) => (
                                     <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                            <span>{item.name}</span>
-                                        </Link>
+                                        <Button variant="ghost" size="sm" render={<Link href={item.href} className="text-base" />} nativeButton={false}><span>{item.name}</span></Button>
                                     </li>
                                 ))}
                             </ul>
@@ -77,7 +72,7 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button variant="outline" size="sm" className={cn(isScrolled && 'lg:hidden')} render={<Link href="#" />} nativeButton={false}><span>Login</span></Button>
+                                <Button variant="ghost" size="sm" className={cn(isScrolled && 'lg:hidden')} render={<Link href="#" />} nativeButton={false}><span>Login</span></Button>
                                 <Button size="sm" className={cn(isScrolled && 'lg:hidden')} render={<Link href="#" />} nativeButton={false}><span>Sign Up</span></Button>
                                 <Button size="sm" className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')} render={<Link href="#" />} nativeButton={false}><span>Get Started</span></Button>
                             </div>

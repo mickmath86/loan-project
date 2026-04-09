@@ -23,75 +23,36 @@ interface MobileLink {
     href?: string
 }
 
-const features: FeatureLink[] = [
+const learnLinks: FeatureLink[] = [
     {
-        href: '#automation',
-        name: 'Automation',
-        description: 'Automate your workflow',
+        href: '#how-it-works',
+        name: 'How It Works',
+        description: 'A simple 3-step process',
     },
     {
-        href: '#scalability',
-        name: 'Scalability',
-        description: 'Scale your application effortlessly',
+        href: '#who-its-for',
+        name: 'Who It\'s For',
+        description: 'See if this fits your situation',
     },
     {
-        href: '#backup',
-        name: 'Backup',
-        description: 'Keep your data backed up',
+        href: '#heloc-vs-status-quo',
+        name: 'HELOC vs. Status Quo',
+        description: 'Compare your options side by side',
     },
     {
-        href: '#analytics',
-        name: 'Analytics',
-        description: 'Track and measure your progress',
+        href: '#faqs',
+        name: 'FAQs',
+        description: 'Common questions answered',
     },
-]
-
-const useCases: FeatureLink[] = [
-    {
-        href: '#ux',
-        name: 'Marketplace',
-        description: 'Find and buy AI tools',
-    },
-    {
-        href: '#performance',
-        name: 'Guides',
-        description: 'Learn how to use AI tools',
-    },
-    {
-        href: '#security',
-        name: 'API Integration',
-        description: 'Integrate AI tools into your app',
-    },
-    {
-        href: '#support',
-        name: 'Partnerships',
-        description: 'Get help when you need it',
-    },
-]
-
-const contentLinks: FeatureLink[] = [
-    {
-        name: 'Announcements',
-        href: '#link',
-    },
-    {
-        name: 'Resources',
-        href: '#link',
-    },
-    { name: 'Blog', href: '#link' },
 ]
 
 const mobileLinks: MobileLink[] = [
     {
-        groupName: 'Product',
-        links: features,
+        groupName: 'Learn',
+        links: learnLinks,
     },
-    {
-        groupName: 'Solutions',
-        links: [...useCases, ...contentLinks],
-    },
-    { name: 'Pricing', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'How It Works', href: '#how-it-works' },
+    { name: 'FAQs', href: '#faqs' },
 ]
 
 export function Header() {
@@ -139,7 +100,7 @@ export function Header() {
 
                         <div className="max-lg:in-data-[state=active]:mt-6 in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button variant="ghost" className="rounded-full pr-2.5" render={<Link href="#" />} nativeButton={false}><span>Continue</span><span className="*:size-3! shadow-xs bg-card ring-border text-primary flex size-5 rounded-full ring-1 *:m-auto">
+                                <Button variant="ghost" className="rounded-full bg-sky-500 text-white hover:bg-sky-600 pr-2.5" render={<Link href="#cta" />} nativeButton={false}><span>See If I May Qualify</span><span className="*:size-3! shadow-xs bg-white/20 text-white flex size-5 rounded-full *:m-auto">
                                                                             <ArrowRight className="size-4" />
                                                                         </span></Button>
                             </div>
@@ -211,12 +172,11 @@ const NavMenu = () => {
         <NavigationMenu viewport={false}>
             <NavigationMenuList className="gap-3">
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Product</NavigationMenuTrigger>
-                    <NavigationMenuContent className="min-w-xl rounded-3xl! shadow-black/5! mx-auto grid max-w-xl grid-cols-2 divide-x p-1">
+                    <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
+                    <NavigationMenuContent className="min-w-md rounded-3xl! shadow-black/5! mx-auto grid max-w-md p-1">
                         <div className="p-3">
-                            <span className="text-muted-foreground ml-4 text-xs font-medium">Features</span>
                             <ul className="mt-2">
-                                {features.map((feature, index) => (
+                                {learnLinks.map((feature, index) => (
                                     <ListItem
                                         key={index}
                                         href={feature.href}
@@ -226,26 +186,13 @@ const NavMenu = () => {
                                 ))}
                             </ul>
                         </div>
-                        <div className="p-3">
-                            <span className="text-muted-foreground ml-4 text-xs font-medium">Agents Workflow</span>
-                            <ul className="mt-2">
-                                {useCases.map((useCase, index) => (
-                                    <ListItem
-                                        key={index}
-                                        href={useCase.href}
-                                        title={useCase.name}
-                                        description={useCase.description}
-                                    />
-                                ))}
-                            </ul>
-                        </div>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="#" />}>Pricing</NavigationMenuLink>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="#how-it-works" />}>How It Works</NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="#" />}>Company</NavigationMenuLink>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="#faqs" />}>FAQs</NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>

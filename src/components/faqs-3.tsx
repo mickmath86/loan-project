@@ -3,42 +3,47 @@ import Link from 'next/link'
 
 const faqItems = [
     {
-        group: 'General',
+        group: 'About HELOCs',
         items: [
             {
                 id: 'item-1',
-                question: 'How long does shipping take?',
-                answer: 'Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.',
+                question: 'What is a HELOC?',
+                answer: 'A HELOC (Home Equity Line of Credit) is a loan that lets you borrow against the equity you\'ve built in your home. It works similarly to a credit card — you have a credit limit and can draw from it as needed — but typically at a much lower interest rate.',
             },
             {
                 id: 'item-2',
-                question: 'What payment methods do you accept?',
-                answer: 'We accept all major credit cards (Visa, Mastercard, American Express), PayPal, Apple Pay, and Google Pay. For enterprise customers, we also offer invoicing options.',
+                question: 'Will this replace my current mortgage?',
+                answer: 'No. A HELOC is a separate line of credit that sits alongside your existing mortgage. Your first mortgage stays in place. You\'re simply accessing some of the equity your home has gained over time.',
             },
             {
                 id: 'item-3',
-                question: 'Can I change or cancel my order?',
-                answer: 'You can modify or cancel your order within 1 hour of placing it. After this window, please contact our customer support team who will assist you with any changes.',
+                question: 'How much home equity do I typically need?',
+                answer: 'Most lenders look for at least 15–20% equity in your home after accounting for your existing mortgage. The exact amount varies by lender, your credit profile, and your property.',
             },
         ],
     },
     {
-        group: 'Shipping',
+        group: 'Process & Privacy',
         items: [
             {
-                id: 'item-1',
-                question: 'Do you ship internationally?',
-                answer: 'Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.',
+                id: 'item-4',
+                question: 'Will checking my fit affect my credit score?',
+                answer: 'No. Our initial fit check does not require a credit pull. If you decide to move forward with a lending partner, they may run a credit check at that stage — but that\'s your choice and comes later in the process.',
             },
             {
-                id: 'item-2',
-                question: 'What is your return policy?',
-                answer: 'We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some specialty items may have different return terms, which will be noted on the product page.',
+                id: 'item-5',
+                question: 'How long does the process take?',
+                answer: 'The initial fit check takes about 2 minutes. If you choose to connect with a lending partner, the HELOC application and approval process typically takes 2–6 weeks depending on the lender and your situation.',
             },
             {
-                id: 'item-3',
-                question: 'Do you ship internationally?',
-                answer: 'Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.',
+                id: 'item-6',
+                question: 'What if a HELOC isn\'t the right fit for me?',
+                answer: 'That\'s completely fine. The whole point of this tool is to help you understand your options before committing to anything. If a HELOC doesn\'t look like a good match, you\'ll know — and there\'s zero obligation to move forward.',
+            },
+            {
+                id: 'item-7',
+                question: 'Who makes the final lending decisions?',
+                answer: 'Licensed lending partners handle all underwriting and approval decisions. We help you understand whether it may be worth exploring, but we are not a lender and do not make credit or lending decisions.',
             },
         ],
     },
@@ -46,18 +51,18 @@ const faqItems = [
 
 export default function FAQs() {
     return (
-        <section className="bg-background py-16 md:py-24">
+        <section id="faqs" className="bg-background py-16 md:py-24">
             <div className="mx-auto max-w-5xl px-1 md:px-6">
                 <div className="grid max-md:gap-8 md:grid-cols-5 md:divide-x md:border">
                     <div className="max-w-lg max-md:px-6 md:col-span-2 md:p-10 lg:p-12">
                         <h2 className="text-foreground text-4xl font-semibold">FAQs</h2>
-                        <p className="text-muted-foreground mt-4 text-balance text-lg">Your questions answered</p>
+                        <p className="text-muted-foreground mt-4 text-balance text-lg">Common questions about HELOCs and debt consolidation</p>
                         <p className="text-muted-foreground mt-6 max-md:hidden">
-                            Can't find what you're looking for? Contact our{' '}
+                            Have another question?{' '}
                             <Link
-                                href="#"
-                                className="text-primary font-medium hover:underline">
-                                customer support team
+                                href="#cta"
+                                className="text-sky-500 font-medium hover:underline">
+                                Get in touch
                             </Link>
                         </p>
                     </div>
@@ -90,11 +95,11 @@ export default function FAQs() {
                 </div>
 
                 <p className="text-muted-foreground mt-12 px-6 md:hidden">
-                    Can't find what you're looking for? Contact our{' '}
+                    Have another question?{' '}
                     <Link
-                        href="#"
-                        className="text-primary font-medium hover:underline">
-                        customer support team
+                        href="#cta"
+                        className="text-sky-500 font-medium hover:underline">
+                        Get in touch
                     </Link>
                 </p>
             </div>

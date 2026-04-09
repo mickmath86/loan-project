@@ -5,12 +5,12 @@ import { PollIllustration } from "@/components/ui/illustrations/poll-illustratio
 
 export default function HowItWorksSeven() {
     return (
-        <section className="bg-background @container py-24">
+        <section id="how-it-works" className="bg-background @container py-24">
             <div className="mx-auto w-full max-w-5xl px-6 xl:px-0">
                 <div className="@4xl:text-left text-center">
-                    <h2 className="text-foreground text-3xl font-semibold">Simple Three-Step Workflow</h2>
+                    <h2 className="text-foreground text-3xl font-semibold">How It Works</h2>
                     <p className="text-muted-foreground mt-4 text-balance text-lg">
-                        Experience our streamlined approach to data analysis that empowers your team to make <span className="text-foreground">informed decisions</span> quickly and efficiently.
+                        Three simple steps to find out if a HELOC may help you <span className="text-foreground">lower your monthly payments</span>.
                     </p>
                 </div>
                 <div className="@max-4xl:max-w-sm relative mx-auto mt-12">
@@ -27,8 +27,8 @@ export default function HowItWorksSeven() {
                                 <CampaignIllustration />
                             </div>
                             <div>
-                                <h3 className="text-foreground font-semibold">Secure Messaging</h3>
-                                <p className="text-muted-foreground mt-2">End-to-end encrypted communications for enterprise.</p>
+                                <h3 className="text-foreground font-semibold">Answer a Few Questions</h3>
+                                <p className="text-muted-foreground mt-2">Tell us about your home, your mortgage, and your credit card balances. Takes about 2 minutes.</p>
                             </div>
                         </div>
                         <div className="row-span-2 grid grid-rows-subgrid gap-8">
@@ -44,8 +44,8 @@ export default function HowItWorksSeven() {
                             </div>
 
                             <div>
-                                <h3 className="text-foreground font-semibold">Analytics Dashboard</h3>
-                                <p className="text-muted-foreground mt-2">Data visualization tools to transform complex metrics into insights.</p>
+                                <h3 className="text-foreground font-semibold">Review Your Fit</h3>
+                                <p className="text-muted-foreground mt-2">We&apos;ll show you whether a HELOC may be worth exploring based on what you shared. No credit pull required.</p>
                             </div>
                         </div>
                         <div className="row-span-2 grid grid-rows-subgrid gap-8">
@@ -57,8 +57,8 @@ export default function HowItWorksSeven() {
                             </div>
 
                             <div className="@4xl:mt-0 mt-8">
-                                <h3 className="text-foreground font-semibold">Resource Monitoring</h3>
-                                <p className="text-muted-foreground mt-2">Real-time tracking of system performance to optimize efficiency.</p>
+                                <h3 className="text-foreground font-semibold">Choose Your Next Step</h3>
+                                <p className="text-muted-foreground mt-2">If it looks like a good fit, connect with a licensed lending partner. If not, no pressure at all.</p>
                             </div>
                         </div>
                     </div>

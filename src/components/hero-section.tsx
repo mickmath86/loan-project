@@ -30,22 +30,22 @@ export default function HeroSection() {
                         />
                         <div className="flex justify-center">
                             <div className="relative flex flex-wrap items-center justify-center gap-3 p-4">
-                                <div className="bg-foreground text-background rounded-full px-2 py-1 text-xs">New</div>
+                                <div className="bg-sky-500 text-white rounded-full px-2 py-1 text-xs">No Obligation</div>
                                 <Link
-                                    href="#"
+                                    href="#cta"
                                     className="group flex items-center gap-2 text-sm after:absolute after:inset-0">
-                                    Meet Tailark 2 : The Ultimate Design System
+                                    Answer a few questions to see your options
                                     <ChevronRight className="not-group-hover:opacity-50 size-4" />
                                 </Link>
                             </div>
                         </div>
                         <div className="corner-t-notch relative z-10 mx-auto grid max-w-6xl rounded-t-[2rem] border-x border-t px-6 py-16 max-md:pb-6">
                             <div className="mx-auto max-w-3xl text-center">
-                                <h1 className="text-foreground text-balance font-serif text-4xl leading-[1.1] tracking-[-0.5px] md:text-5xl">Unlock Revenue Growth with Intelligent Analytics</h1>
+                                <h1 className="text-foreground text-balance font-serif text-4xl leading-[1.1] tracking-[-0.5px] md:text-5xl">Use Your Home Equity to Simplify Credit Card Debt</h1>
 
-                                <p className="text-muted-foreground mb-6 mt-4 text-balance text-lg">Empower your sales team with AI-powered insights that drive conversions, optimize pipelines, and accelerate deal velocity. Our intelligent.</p>
+                                <p className="text-muted-foreground mb-6 mt-4 text-balance text-lg">Answer a few simple questions to find out if a HELOC could help lower your monthly payments. No credit check. No commitment. Just clarity.</p>
 
-                                <Button size="lg" className="rounded-full px-6 shadow-transparent" render={<Link href="#" />} nativeButton={false}>Book a demo</Button>
+                                <Button size="lg" className="rounded-full px-6 shadow-transparent bg-sky-500 text-white hover:bg-sky-600" render={<Link href="#cta" />} nativeButton={false}>See If I May Qualify</Button>
                             </div>
                         </div>
                         <div className="relative -mt-px border-y">

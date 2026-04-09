@@ -5,15 +5,15 @@ import { LayoutIllustration } from "@/components/ui/illustrations/layout-illustr
 
 export default function CallToAction() {
     return (
-        <section className="bg-background py-12 md:py-24">
+        <section id="cta" className="bg-background py-12 md:py-24">
             <div className="mx-auto max-w-5xl px-6">
                 <Card className="relative overflow-hidden pl-8 pt-8 shadow-lg md:p-20">
                     <div className="max-w-xl max-md:pr-8">
                         <div className="relative">
-                            <h2 className="text-foreground text-balance text-3xl font-semibold md:text-4xl">Create, Sell and Grow</h2>
-                            <p className="text-muted-foreground mb-6 mt-4 text-balance">Join a community of over 1000+ companies and developers who have already discovered the power of Tailark. </p>
+                            <h2 className="text-foreground text-balance text-3xl font-semibold md:text-4xl">Ready to see your options?</h2>
+                            <p className="text-muted-foreground mb-6 mt-4 text-balance">Answer a few simple questions and find out if using home equity to consolidate credit card debt could work for you. No credit check. No commitment.</p>
 
-                            <Button render={<Link href="#" />} nativeButton={false}>Contact Sales</Button>
+                            <Button className="bg-sky-500 text-white hover:bg-sky-600 rounded-full" render={<Link href="#" />} nativeButton={false}>See If I May Qualify</Button>
                         </div>
                     </div>
                     <div className="max-lg:mask-b-from-35% max-lg:pt-6 max-md:mt-4 lg:absolute lg:inset-0 lg:top-12 lg:ml-auto lg:w-2/5">

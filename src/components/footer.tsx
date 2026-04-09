@@ -5,19 +5,23 @@ import Link from 'next/link'
 
 const links = [
     {
-        group: 'Resources',
+        group: 'Product',
         items: [
             {
-                title: 'How It Works',
-                href: '#how-it-works',
+                title: 'Features',
+                href: '#',
             },
             {
-                title: 'Who It\'s For',
-                href: '#who-its-for',
+                title: 'Solution',
+                href: '#',
             },
             {
-                title: 'FAQs',
-                href: '#faqs',
+                title: 'Partnerships',
+                href: '#',
+            },
+            {
+                title: 'Mobile App',
+                href: '#',
             },
         ],
     },
@@ -29,11 +33,11 @@ const links = [
                 href: '#',
             },
             {
-                title: 'Privacy Policy',
+                title: 'Licence',
                 href: '#',
             },
             {
-                title: 'Terms of Use',
+                title: 'Privacy',
                 href: '#',
             },
         ],
@@ -52,10 +56,10 @@ export default function FooterSection() {
                             className="text-muted pointer-events-none absolute inset-0 size-full translate-y-3/4"
                         />
                         <div className="relative text-center">
-                            <h2 className="text-balance text-3xl font-semibold md:text-4xl">Take the first step toward simpler payments</h2>
-                            <p className="text-muted-foreground mb-6 mt-4 text-balance">Find out in 2 minutes if a HELOC could help reduce what you pay each month on credit card debt. No obligation. No credit check.</p>
+                            <h2 className="text-balance text-3xl font-semibold md:text-4xl">Create, Sell and Grow</h2>
+                            <p className="text-muted-foreground mb-6 mt-4 text-balance">Join a community of over 1000+ companies and developers who have already discovered the power of Tailark. </p>
 
-                            <Button className="bg-sky-500 text-white hover:bg-sky-600 rounded-full" render={<Link href="#cta" />} nativeButton={false}>See If I May Qualify</Button>
+                            <Button render={<Link href="#" />} nativeButton={false}>Contact Sales</Button>
                         </div>
                     </Card>
                 </div>
@@ -73,7 +77,7 @@ export default function FooterSection() {
                                 <Logo uniColor />
                             </Link>
 
-                            <p className="text-muted-foreground text-balance text-sm">We help homeowners understand whether home equity may be a smart way to consolidate high-interest credit card debt. We are not a lender. All lending decisions are made by licensed partners.</p>
+                            <p className="text-muted-foreground text-balance text-sm">Tailark is a platform for building AI-powered applications.</p>
                         </div>
 
                         <div className="col-span-3 grid gap-6 sm:grid-cols-3">
@@ -88,7 +92,7 @@ export default function FooterSection() {
                                             <Link
                                                 key={index}
                                                 href={item.href}
-                                                className="text-muted-foreground hover:text-sky-500 block duration-150">
+                                                className="text-muted-foreground hover:text-primary block duration-150">
                                                 <span>{item.title}</span>
                                             </Link>
                                         ))}
@@ -97,14 +101,14 @@ export default function FooterSection() {
                             ))}
 
                             <div className="space-y-4">
-                                <span className="block font-medium">Connect</span>
+                                <span className="block font-medium">Community</span>
                                 <div className="flex flex-wrap gap-3 text-sm">
                                     <Link
                                         href="#"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label="X/Twitter"
-                                        className="text-muted-foreground hover:text-sky-500 block">
+                                        className="text-muted-foreground hover:text-primary block">
                                         <svg
                                             className="size-5"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +125,7 @@ export default function FooterSection() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label="LinkedIn"
-                                        className="text-muted-foreground hover:text-sky-500 block">
+                                        className="text-muted-foreground hover:text-primary block">
                                         <svg
                                             className="size-5"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +146,7 @@ export default function FooterSection() {
                         className="h-px bg-[length:6px_1px] bg-repeat-x opacity-25 [background-image:linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)]"
                     />
                     <div className="flex flex-wrap justify-between gap-4">
-                        <span className="text-muted-foreground text-sm">© {new Date().getFullYear()} All rights reserved. Not a lender. For informational purposes only.</span>
+                        <span className="text-muted-foreground text-sm">© {new Date().getFullYear()} Tailark, All rights reserved </span>
 
                         <div className="ring-foreground/5 bg-card flex items-center gap-2 rounded-full border border-transparent py-1 pl-2 pr-4 shadow ring-1">
                             <div className="relative flex size-3">

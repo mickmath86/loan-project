@@ -1,23 +1,36 @@
+export interface AddressComponents {
+    fullAddress: string
+    street: string
+    city: string
+    state: string
+    zip: string
+    county: string
+    placeId: string
+    lat: number | null
+    lng: number | null
+    verified: boolean
+}
+
 export interface QuizData {
-    // Step 1: About your home
-    propertyState: string
+    // Step 1: Your goal
+    primaryGoal: string
+
+    // Step 2: Your property
+    address: AddressComponents
     homeType: string
     primaryResidence: string
 
-    // Step 2: Your equity
+    // Step 3: Your equity
     homeValue: string
     mortgageBalance: string
 
-    // Step 3: Your debt
+    // Step 4: Your debt & finances
     creditCardDebt: string
-    mainGoal: string
-
-    // Step 4: Your profile
     creditScoreRange: string
     employmentStatus: string
     householdIncome: string
 
-    // Step 5: Timing
+    // Step 5: Timing & preferences
     decisionTimeline: string
     wantHelp: string
 
@@ -31,14 +44,27 @@ export interface QuizData {
     source: string
 }
 
+export const emptyAddress: AddressComponents = {
+    fullAddress: '',
+    street: '',
+    city: '',
+    state: '',
+    zip: '',
+    county: '',
+    placeId: '',
+    lat: null,
+    lng: null,
+    verified: false,
+}
+
 export const initialQuizData: QuizData = {
-    propertyState: '',
+    primaryGoal: '',
+    address: { ...emptyAddress },
     homeType: '',
     primaryResidence: '',
     homeValue: '',
     mortgageBalance: '',
     creditCardDebt: '',
-    mainGoal: '',
     creditScoreRange: '',
     employmentStatus: '',
     householdIncome: '',
@@ -53,7 +79,23 @@ export const initialQuizData: QuizData = {
     source: typeof window !== 'undefined' ? window.location.href : '',
 }
 
-export type ResultType = 'likely-fit' | 'maybe-fit' | 'not-fit'
+export type ProductRecommendation =
+    | 'heloc'
+    | 'home-equity-loan'
+    | 'cash-out-refi'
+    | 'personal-loan'
+    | 'debt-counseling'
+    | 'hold-off'
+
+export type FitLevel = 'strong' | 'possible' | 'not-recommended'
+
+export interface QuizResult {
+    fitLevel: FitLevel
+    primaryProduct: ProductRecommendation
+    secondaryProduct?: ProductRecommendation
+    headline: string
+    description: string
+}
 
 export interface StepConfig {
     id: number
@@ -62,10 +104,10 @@ export interface StepConfig {
 }
 
 export const STEPS: StepConfig[] = [
-    { id: 1, title: 'About Your Home', subtitle: 'Let\'s start with the basics about your property.' },
-    { id: 2, title: 'Your Equity', subtitle: 'Rough estimates are fine — we\'re looking for a general picture.' },
-    { id: 3, title: 'Your Debt', subtitle: 'Help us understand what you\'re working with.' },
-    { id: 4, title: 'Your Profile', subtitle: 'A few details to check if this could be a good fit.' },
+    { id: 1, title: 'Your Goal', subtitle: 'What are you looking to accomplish?' },
+    { id: 2, title: 'Your Property', subtitle: 'Tell us about your home.' },
+    { id: 3, title: 'Your Equity', subtitle: 'Rough estimates are fine — we\'re looking for a general picture.' },
+    { id: 4, title: 'Your Finances', subtitle: 'A few details to understand your situation.' },
     { id: 5, title: 'Timing', subtitle: 'No rush — just helps us understand where you are.' },
     { id: 6, title: 'Your Info', subtitle: 'So we can share your results and next steps.' },
 ]

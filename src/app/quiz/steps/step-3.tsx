@@ -4,21 +4,22 @@ import { QuizData } from '../types'
 import { OptionCard } from '../components/option-card'
 import { StepWrapper, QuestionGroup } from '../components/step-wrapper'
 
-const debtRanges = [
-    { value: 'under-10k', label: 'Under $10,000' },
-    { value: '10k-25k', label: '$10,000 – $25,000' },
-    { value: '25k-50k', label: '$25,000 – $50,000' },
-    { value: '50k-75k', label: '$50,000 – $75,000' },
-    { value: '75k-100k', label: '$75,000 – $100,000' },
-    { value: 'over-100k', label: 'Over $100,000' },
+const homeValueRanges = [
+    { value: 'under-200k', label: 'Under $200,000' },
+    { value: '200k-400k', label: '$200,000 – $400,000' },
+    { value: '400k-600k', label: '$400,000 – $600,000' },
+    { value: '600k-800k', label: '$600,000 – $800,000' },
+    { value: '800k-1m', label: '$800,000 – $1,000,000' },
+    { value: 'over-1m', label: 'Over $1,000,000' },
 ]
 
-const goalOptions = [
-    { value: 'lower-payments', label: 'Lower my monthly payments' },
-    { value: 'reduce-interest', label: 'Reduce total interest paid' },
-    { value: 'simplify', label: 'Simplify into one payment' },
-    { value: 'pay-off-faster', label: 'Pay off debt faster' },
-    { value: 'not-sure', label: 'I\'m not sure yet — just exploring' },
+const mortgageRanges = [
+    { value: 'under-100k', label: 'Under $100,000' },
+    { value: '100k-250k', label: '$100,000 – $250,000' },
+    { value: '250k-400k', label: '$250,000 – $400,000' },
+    { value: '400k-600k', label: '$400,000 – $600,000' },
+    { value: 'over-600k', label: 'Over $600,000' },
+    { value: 'paid-off', label: 'Mortgage is paid off' },
 ]
 
 interface StepProps {
@@ -29,30 +30,30 @@ interface StepProps {
 export function Step3({ data, onChange }: StepProps) {
     return (
         <StepWrapper
-            title="Your Debt"
-            subtitle="Help us understand what you're working with.">
+            title="Your Equity"
+            subtitle="Rough estimates are fine — we're looking for a general picture.">
 
-            <QuestionGroup label="About how much credit card debt are you carrying?">
+            <QuestionGroup label="About what is your home worth?">
                 <div className="grid gap-2 sm:grid-cols-2">
-                    {debtRanges.map((option) => (
+                    {homeValueRanges.map((option) => (
                         <OptionCard
                             key={option.value}
                             label={option.label}
-                            selected={data.creditCardDebt === option.value}
-                            onClick={() => onChange({ creditCardDebt: option.value })}
+                            selected={data.homeValue === option.value}
+                            onClick={() => onChange({ homeValue: option.value })}
                         />
                     ))}
                 </div>
             </QuestionGroup>
 
-            <QuestionGroup label="What's your main goal?">
-                <div className="grid gap-2">
-                    {goalOptions.map((option) => (
+            <QuestionGroup label="About how much do you still owe on your mortgage?">
+                <div className="grid gap-2 sm:grid-cols-2">
+                    {mortgageRanges.map((option) => (
                         <OptionCard
                             key={option.value}
                             label={option.label}
-                            selected={data.mainGoal === option.value}
-                            onClick={() => onChange({ mainGoal: option.value })}
+                            selected={data.mortgageBalance === option.value}
+                            onClick={() => onChange({ mortgageBalance: option.value })}
                         />
                     ))}
                 </div>

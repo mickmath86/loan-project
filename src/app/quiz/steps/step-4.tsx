@@ -4,6 +4,15 @@ import { QuizData } from '../types'
 import { OptionCard } from '../components/option-card'
 import { StepWrapper, QuestionGroup } from '../components/step-wrapper'
 
+const debtRanges = [
+    { value: 'none', label: 'None / minimal' },
+    { value: 'under-10k', label: 'Under $10,000' },
+    { value: '10k-25k', label: '$10,000 – $25,000' },
+    { value: '25k-50k', label: '$25,000 – $50,000' },
+    { value: '50k-100k', label: '$50,000 – $100,000' },
+    { value: 'over-100k', label: 'Over $100,000' },
+]
+
 const creditScoreRanges = [
     { value: 'excellent', label: 'Excellent (740+)' },
     { value: 'good', label: 'Good (670–739)' },
@@ -36,8 +45,21 @@ interface StepProps {
 export function Step4({ data, onChange }: StepProps) {
     return (
         <StepWrapper
-            title="Your Profile"
-            subtitle="A few details to check if this could be a good fit.">
+            title="Your Finances"
+            subtitle="A few details to understand your situation and find the best options.">
+
+            <QuestionGroup label="About how much credit card or high-interest debt are you carrying?">
+                <div className="grid gap-2 sm:grid-cols-2">
+                    {debtRanges.map((option) => (
+                        <OptionCard
+                            key={option.value}
+                            label={option.label}
+                            selected={data.creditCardDebt === option.value}
+                            onClick={() => onChange({ creditCardDebt: option.value })}
+                        />
+                    ))}
+                </div>
+            </QuestionGroup>
 
             <QuestionGroup label="What's your estimated credit score range?">
                 <div className="grid gap-2 sm:grid-cols-2">

@@ -1,6 +1,6 @@
 import HeroSection from '@/components/hero-section'
-import SecondaryHero from '@/components/secondary-hero-13'
-import HowItWorks from '@/components/how-it-works-7'
+import ExpandableFeatures from '@/components/expandable-features-21'
+import ExpandableFeatures11 from '@/components/expandable-features-11'
 import Comparator from '@/components/comparator-7'
 import Faqs from '@/components/faqs-3'
 import CallToAction from '@/components/call-to-action'
@@ -10,8 +10,8 @@ export default function Home() {
     return (
         <>
             <HeroSection />
-            <SecondaryHero />
-            <HowItWorks />
+            <ExpandableFeatures />
+            <ExpandableFeatures11 />
             <Comparator />
             <Faqs />
             {/* <CallToAction /> */}
